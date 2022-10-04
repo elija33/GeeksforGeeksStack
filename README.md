@@ -15,3 +15,13 @@ size() : to get the amout of elements in the stack.
 Underflow: when pop() or peek() is called on empty stack.
 
 Overflow: when push clled on a full stack.
+
+
+
+                             Applications of Stack
+Function calls
+Checkkng for Balanced Parantheris
+Reverning Items
+Infix to Perfix/Profix
+Stack spam problem and its variations
+Undo / Redo or Forward/Backward.
