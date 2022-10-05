@@ -1,24 +1,27 @@
-package LargestRectangularAreaHistogram;
+package LargestRectangularAreaHistogram1;
 
-public class EfficLargestRectangularArea {
+public class NaiveLargestRectangularArea {
     public static int getMaxArea(int number[]) {
-        int sum = 0;
+        int total = 0;
         for (int i = 0; i < number.length; i++) {
             int curr = number[i];
             for (int j = i - 1; j >= 0; j--) {
                 if (number[j] >= number[i]) {
                     curr += number[i];
-                } else
+                } else {
                     break;
+                }
             }
             for (int j = i + 1; j < number.length; j++) {
                 if (number[j] >= number[i]) {
                     curr += number[i];
+                } else {
+                    break;
                 }
             }
-            sum = Math.max(i, curr);
+            total = Math.max(total, curr);
         }
-        return sum;
+        return total;
     }
 
     public static void main(String[] args) {
