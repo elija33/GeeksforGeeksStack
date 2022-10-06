@@ -1,24 +1,76 @@
 package LinkedListImplementStack;
 
+import java.net.PortUnreachableException;
+import java.util.Stack;
+
+import org.w3c.dom.Node;
+
 public class LinkedlistStack {
-    Node head;
 
     public class Node {
         int data;
         Node next;
 
-        public Node(int d) {
+        Node(int d) {
             data = d;
             next = null;
         }
+    }
 
-        public static void main(String[] args) {
-            Node head = new Node(10);
-            head.next = new Node(20);
-            head.next.next = new Node(30);
-            head.next.next.next = new Node(40);
-            head.next.next.next.next = head;
+    class MyStack {
+        Node head;
+        int sz;
 
+        MyStack() {
+            head = null;
+            sz = 0;
         }
+
+        void push(int x) {
+            Node temp = new Node(x);
+            temp.next = head;
+            head = temp;
+            sz++;
+        }
+
+        int pop() {
+            if (head == null) {
+                return Integer.MAX_VALUE;
+            }
+            int res = head.data;
+            Node temp = head;
+            head = head.next;
+            sz--;
+            return res;
+        }
+
+        int peek() {
+            if (head == null) {
+                return Integer.MAX_VALUE;
+            }
+            return head.data;
+        }
+
+        int size() {
+            return sz;
+        }
+
+        boolean isEmpty() {
+            return head == null;
+        }
+    }
+
+    class GFG{
+    
+    public static void main (String[] args)
+    {
+        MyStack s = new MyStack();
+        s.push(5);
+        s.push(10);
+        s.push(20);
+        System.out.println(s.pop());
+        System.out.println(s.size());
+        System.out.println(s.peek());
+        System.out.println(s.isEmpty());
     }
 }
