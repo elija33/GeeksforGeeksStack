@@ -2,11 +2,13 @@
 
 Given an expression string exp, write a program to examine whether the pairs and the orders of “{“, “}”, “(“, “)”, “[“, “]” are correct in the given expression.
 
-Example:
+Example 1:
 
 Input: exp = “[()]{}{[()()]()}” 
 Output: Balanced
 Explanation: all the brackets are well-formed
+
+Example 2:
 
 Input: exp = “[(])” 
 Output: Not Balanced 
